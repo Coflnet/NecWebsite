@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NotEnoughCoins</title>
+        <link rel="stylesheet" href="static/style.css">
+        <link rel="icon" href="{{ url_for('static', filename='NEC.png') }}">
+        <!-- Facebook Meta Tags -->
+        <meta property="og:url" content="https://notenoughcoins.net">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="NotEnoughCoins">
+        <meta property="og:description" content="The official website of the NotEnoughCoins Auction Flipping Mod">
+        <meta property="og:image" content="https://notenoughcoins.net/static/NEC.png">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta property="twitter:domain" content="notenoughcoins.net">
+        <meta property="twitter:url" content="https://notenoughcoins.net">
+        <meta name="twitter:title" content="NotEnoughCoins">
+        <meta name="twitter:description" content="The official website of the NotEnoughCoins Auction Flipping Mod">
+        <meta name="twitter:image" content="https://notenoughcoins.net/static/NEC.png">
+    </head>
+    <header>
+        <nav>
+            <ul class ="topnav">
+                <li>
+                    <a class ="nice-text" href="https://sky.coflnet.com/">Auction and bazaar history</a>
+                </li>
+                <li>
+                    <a class ="nice-text" href="https://sky.coflnet.com/flipper">Ah Flipper</a>
+                </li>
+                <li>
+                    <a class ="nice-text" href="https://discord.gg/wvKXfTgCfb">Discord</a>
+                </li>
+                <li>
+                    <a class ="nice-text" href="https://github.com/Coflnet">GitHub</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <main>
+            <div class="faq-container">
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(1)">What is NotEnoughCoins?</div>
+                    <div class="faqs-answer" id="answer1">NotEnoughCoins is a mod for Hypixel Skyblock that helps you to auction house flip. The mod sends flips in chat that you can click on, buy and then sell for profit. The premium version includes features that automate this process.</div>
+                </div>
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(1)">What is SkyCofl?</div>
+                    <div class="faqs-answer" id="answer6">SkyCofl is a project by the Coflnet company which took over NEC in early 2025 because its previous owner mindlessly didn't have time to develop it further and was starting too loose money for keeping it up.</div>
+                </div>
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(2)">Is NotEnoughCoins a RAT?</div>
+                    <div class="faqs-answer" id="answer2">No, NotEnoughCoins is not a RAT. The source code for the free version of the mod is available for free on our <a href='/github'>GitHub</a>. The code for the premium version is not obfuscated and is viewable by users.</div>
+                </div>
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(3)">Is NotEnoughCoins bannable?</div>
+                    <div class="faqs-answer" id="answer3">All available versions of NEC are fully hypixel TOS compliant.</div>
+                </div>
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(4)">What payment methods are accepted?</div>
+                    <div class="faqs-answer" id="answer4">We currently offer Stripe and Paypal as a payment method on our website.</div>
+                </div>
+                <div class="faqs-item">
+                    <div class="faqs-question" onclick="toggleAnswer(5)">Where can I find out about how to use the mod?</div>
+                    <div class="faqs-answer" id="answer5">Please watch our <a href = 'https://youtu.be/L4xIVq0sQyc?si=QDiHyCtcMFyE0-JL'>tutorial</a> or use the command /nec help in game.</div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
