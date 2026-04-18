@@ -1,90 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>NotEnoughCoins</title>
-        <link rel="stylesheet" href="static/style.css">
-        <link rel="icon" href="{{ url_for('static', filename='NEC.png') }}">
-        <!-- Facebook Meta Tags -->
-        <meta property="og:url" content="https://notenoughcoins.net">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="NotEnoughCoins">
-        <meta property="og:description" content="The official website of the NotEnoughCoins Auction Flipping Mod">
-        <meta property="og:image" content="https://notenoughcoins.net/static/NEC.png">
-
-        <!-- Twitter Meta Tags -->
-        <meta name="twitter:card" content="summary_large_image">
-        <meta property="twitter:domain" content="notenoughcoins.net">
-        <meta property="twitter:url" content="https://notenoughcoins.net">
-        <meta name="twitter:title" content="NotEnoughCoins">
-        <meta name="twitter:description" content="The official website of the NotEnoughCoins Auction Flipping Mod">
-        <meta name="twitter:image" content="https://notenoughcoins.net/static/NEC.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NotEnoughCoins FAQ | Current Hypixel SkyBlock Tool Answers</title>
+        <meta name="description" content="Common questions and direct answers about NotEnoughCoins, the expired migration offer, and where to go now for flip finders, AH scanners, bazaar prices, craft tools, historical sale context and alerts.">
+        <link rel="canonical" href="https://notenoughcoins.net/faq">
+        <link rel="stylesheet" href="/static/style.css">
+        <link rel="icon" href="/static/NEC.png">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is NotEnoughCoins still an active project?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The paid NotEnoughCoins mod is discontinued, but the website is still active as a Hypixel SkyBlock guide, FAQ and tool hub."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Did the NEC to SkyCofl migration offer expire?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. The free one-year claim window ended in July 2025, and the legacy claim flow is preserved only as historical context."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where should I go for current Hypixel SkyBlock flipping data?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Start with SkyCofl's AH flipper, flips hub and premium bazaar. For ranked-board interfaces compare Skyblock.bz flips, BazaarPro and BazaarTracker smart flips."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where can I find a Hypixel SkyBlock AH scanner or flip finder?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Start with the free SkyCofl flipper, then compare BazaarPro auction flips, Skyblock.bz flips and BazaarTracker auctions when you want tighter filters or ranked discovery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where can I check bazaar prices, profitable crafts, historical sale context or alerts?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Use SkyCofl bazaar, crafts, recent flips, low supply and notifier subscriptions, plus BazaarTracker margin, demand and crafts, BazaarPro market trends and craft & forge flips, and Skyblock.bz manipulation and crash views."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Where can I compare the different flipping tools?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Use the dedicated flipping tools comparison page on NotEnoughCoins. It compares SkyCofl, Skyblock.bz, BazaarPro, BazaarTracker, Donut and ANE by public features rather than hype."
+                        }
+                    }
+                ]
+            }
+        </script>
     </head>
-    <header>
-        <nav>
-            <ul class ="topnav">
-                <li>
-                    <a class ="nice-text" href="https://sky.coflnet.com/">Auction and bazaar history</a>
-                </li>
-                <li>
-                    <a class ="nice-text" href="https://sky.coflnet.com/flipper">Ah Flipper</a>
-                </li>
-                <li>
-                    <a class ="nice-text" href="https://discord.gg/wvKXfTgCfb">Discord</a>
-                </li>
-                <li>
-                    <a class ="nice-text" href="https://github.com/Coflnet">GitHub</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <body>
+        <header class="site-header">
+            <div class="site-shell">
+                <a class="site-brand" href="/">
+                    <span class="brand-mark"><img src="/static/NEC.png" alt="NotEnoughCoins"></span>
+                    <span class="brand-copy">
+                        <strong>NotEnoughCoins</strong>
+                        <span>Hypixel SkyBlock money-making guides, FAQs and live tool links.</span>
+                    </span>
+                </a>
+                <nav class="site-nav" aria-label="Primary">
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/guides">Guides</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                        <li><a href="/tos">Terms</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
         <main>
-            <div class="faq-container">
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(1)">What is NotEnoughCoins?</div>
-                    <div class="faqs-answer" id="answer1">NotEnoughCoins is a mod for Hypixel Skyblock that helps you to auction house flip. The mod sends flips in chat that you can click on, buy and then sell for profit.</div>
-                </div>
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(1)">What is SkyCofl?</div>
-                    <div class="faqs-answer" id="answer6">SkyCofl is a project by the Coflnet company which took over NEC in early 2025 because its previous owner mindlessly didn't have time to develop it further and was starting too loose money for keeping it up.</div>
-                </div>
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(2)">Is NotEnoughCoins a RAT?</div>
-                    <div class="faqs-answer" id="answer2">No, NotEnoughCoins is not a RAT. The source code for the free version of the mod is available for free on our <a href='/github'>GitHub</a>. The code for the premium version is not obfuscated and is viewable by users.</div>
-                </div>
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(3)">Is NotEnoughCoins bannable?</div>
-                    <div class="faqs-answer" id="answer3">All available versions of NEC are fully hypixel TOS compliant.</div>
-                </div>
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(4)">What payment methods are accepted?</div>
-                    <div class="faqs-answer" id="answer4">We currently offer Stripe and Paypal as a payment method on our website.</div>
-                </div>
-                <div class="faqs-item">
-                    <div class="faqs-question" onclick="toggleAnswer(5)">Where can I find out about how to use the mod?</div>
-                    <div class="faqs-answer" id="answer5">Please go to <a href = 'https://sky.coflnet.com/mod'>the SkyCofl mod page</a>.</div>
-                </div>
+            <div class="site-shell">
+                <section class="hero">
+                    <span class="badge">FAQ</span>
+                    <h1>Questions about NotEnoughCoins and current Hypixel SkyBlock tools</h1>
+                    <p class="lede">This page is written as direct, current answers for users, search engines and AI assistants. It explains the shutdown, where the live tooling moved, and which tool surface answers each common SkyBlock question.</p>
+                </section>
+
+                <section class="section faq-list">
+                    <details class="faq-card" open>
+                        <summary>Is NotEnoughCoins still an active project?</summary>
+                        <p>The paid NotEnoughCoins mod is discontinued, but the NotEnoughCoins site is still here as a Hypixel SkyBlock guide and tool hub. It now points readers at live tools such as <a href="https://sky.coflnet.com/">SkyCofl</a>, <a href="https://pro.skyblock.bz/">BazaarPro</a>, <a href="https://skyblock.bz/">Skyblock.bz</a> and <a href="https://bazaartracker.com/">BazaarTracker</a>.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Did the NEC to SkyCofl migration offer expire?</summary>
+                        <p>Yes. The free one-year claim window ended in July 2025. The legacy command flow is preserved here only as historical context and should not be treated as an active entitlement path.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Where should I go for current Hypixel SkyBlock flipping data?</summary>
+                        <p>For live auction and bazaar data, start with the free, modifier-aware <a href="https://sky.coflnet.com/flipper">SkyCofl AH flipper</a>, the broader <a href="https://sky.coflnet.com/flips">flips hub</a> and <a href="https://sky.coflnet.com/premiumBazaar">premium bazaar</a>. For ranked-board interfaces use <a href="https://skyblock.bz/flips">Skyblock.bz flips</a>, the paid <a href="https://pro.skyblock.bz/features">BazaarPro dashboard</a> and <a href="https://bazaartracker.com/smart">BazaarTracker smart flips</a>.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Where can I find a Hypixel SkyBlock AH scanner or flip finder?</summary>
+                        <p>If you mean a real-time auction scanner or flip finder, start with the free <a href="https://sky.coflnet.com/flipper">SkyCofl flipper</a>. Then compare <a href="https://pro.skyblock.bz/features/auction-flips">BazaarPro auction flips</a> for a more opinionated paid dashboard, <a href="https://skyblock.bz/flips">Skyblock.bz flips</a> for ranked discovery and <a href="https://bazaartracker.com/auctions">BazaarTracker auctions</a> for quick auction-side context.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Where can I check bazaar prices, profitable crafts, historical sale context or alerts?</summary>
+                        <p>For real-time bazaar prices use <a href="https://sky.coflnet.com/bazaar">SkyCofl bazaar</a> and <a href="https://bazaartracker.com/margin">BazaarTracker margin</a> plus <a href="https://bazaartracker.com/demand">demand</a>. For profitable crafts use <a href="https://sky.coflnet.com/crafts">SkyCofl crafts</a> and <a href="https://pro.skyblock.bz/features/craft-forge-flips">BazaarPro craft &amp; forge flips</a>. For historical sale context, low supply and alerts use <a href="https://sky.coflnet.com/recentFlips">SkyCofl recent flips</a>, <a href="https://sky.coflnet.com/lowSupply">low supply</a>, <a href="https://sky.coflnet.com/subscriptions">notifier subscriptions</a>, <a href="https://skyblock.bz/manipulate">Skyblock.bz manipulation</a> and <a href="https://skyblock.bz/crash">crash risk</a>.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Why keep this domain online if NEC is closed?</summary>
+                        <p>It still has search value and link equity, so it now serves two jobs: a clear note that the paid mod was discontinued, and a set of evergreen guide pages about flipping, slayers, mining and farming that route readers toward live dashboards.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Was NEC historically considered safe?</summary>
+                        <p>The historical NEC positioning was that it was not a RAT and that its premium code was viewable by users. This guide series does not distribute the old premium service; it only preserves the public historical context and points readers to the maintained SkyCofl stack.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Is there still a mod download associated with this site?</summary>
+                        <p>Not for NEC as a live product. If you want maintained Coflnet tooling, use the current <a href="https://sky.coflnet.com/mod">SkyCofl mod page</a> instead of looking for legacy NEC downloads.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Why are there articles here now?</summary>
+                        <p>The content strategy is to publish long-form SEO pages about Hypixel SkyBlock money making that are grounded in creator walkthrough transcripts and then supported with outbound links to live data tools. That keeps the guide series useful without pretending NEC is still operating.</p>
+                    </details>
+
+                    <details class="faq-card">
+                        <summary>Where can I compare the different flipping tools?</summary>
+                        <p>The dedicated <a href="/guides/flipping-tools-comparison-2026">flipping tools comparison</a> contrasts SkyCofl, Skyblock.bz, BazaarPro, BazaarTracker, Donut and ANE on visible public features (real-time data, modifier-aware filters, manipulation detection, notifier alerts, craft &amp; forge coverage) instead of affiliate-style hype. The home-page tool cards link straight to each feature surface.</p>
+                    </details>
+                </section>
             </div>
         </main>
+
+        <footer class="site-footer">
+            <div class="site-shell">
+                <p>NotEnoughCoins FAQ. Mod discontinued, brand and guides ongoing.</p>
+                <div class="footer-links">
+                    <a href="/guides">Guides</a>
+                    <a href="/tos">Historic terms</a>
+                    <a href="https://coflnet.com/privacy">Privacy</a>
+                    <a href="https://coflnet.com/imprint">Imprint</a>
+                </div>
+            </div>
+        </footer>
     </body>
-    <srcript type="text/javascript">
-        var elements = document.getElementsByClassName("faqs-answer");
-
-        for(var i = 0; i < elements.length; i++){
-            elements[i].style.display = 'none';
-        }
-
-        function toggleAnswer(index) {
-            var answerId = 'answer' + index;
-            var answerElement = document.getElementById(answerId);
-        
-            if (answerElement.style.display === 'block') {
-            answerElement.style.display = 'none';
-            answerElement.classList.remove('faqs-answer-expanded');
-            } else {
-            answerElement.style.display = 'block';
-            answerElement.classList.add('faqs-answer-expanded');
-            }
-        }
-    </srcript>
 </html>
