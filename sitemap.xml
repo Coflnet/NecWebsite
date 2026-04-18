@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://notenoughcoins.net/</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://notenoughcoins.net/faq</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://notenoughcoins.net/tos</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
   <url>
     <loc>https://notenoughcoins.net/guides</loc>
-    <lastmod>2026-04-18</lastmod>
+    <lastmod>2026-04-19</lastmod>
   </url>
+  <url><loc>https://notenoughcoins.net/guides/january-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/february-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/march-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/april-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/may-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/june-2026</loc><lastmod>2026-04-19</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/ah-flipping-guide-2026</loc><lastmod>2026-01-05</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/bazaar-flipping-guide-2026</loc><lastmod>2026-01-12</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/craft-flipping-guide-2026</loc><lastmod>2026-01-19</lastmod></url>
@@ -34,7 +40,12 @@
   <url><loc>https://notenoughcoins.net/guides/magic-find-slayer-roi</loc><lastmod>2026-04-18</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/sludge-mining-guide</loc><lastmod>2026-04-18</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/melon-vs-wheat-farming</loc><lastmod>2026-04-18</lastmod></url>
-  <url><loc>https://notenoughcoins.net/guides/flipping-tools-comparison-2026</loc><lastmod>2026-04-18</lastmod></url>
-  <url><loc>https://notenoughcoins.net/guides/market-literacy-margin-volume-risk</loc><lastmod>2026-04-18</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/flipping-tools-comparison-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/market-literacy-margin-volume-risk</loc><lastmod>2026-04-19</lastmod></url>
   <url><loc>https://notenoughcoins.net/guides/first-50m-coins-guide</loc><lastmod>2026-04-18</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/guardian-slayer-guide-2026</loc><lastmod>2026-06-01</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/greenhouse-update-guide-2026</loc><lastmod>2026-06-08</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/new-fishing-island-guide-2026</loc><lastmod>2026-06-15</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/new-hub-guide-2026</loc><lastmod>2026-04-19</lastmod></url>
+  <url><loc>https://notenoughcoins.net/guides/hypixel-skyblock-0-24-3-update</loc><lastmod>2026-06-29</lastmod></url>
 </urlset>
