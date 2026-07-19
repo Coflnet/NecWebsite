@@ -1,0 +1,59 @@
+---
+// Shared page shell: one canonical header + footer for the whole site, plus the
+// common <head> tags. Per-page <head> markup (title, description, canonical, OG,
+// JSON-LD) and the full <main> body are passed in as raw HTML strings so the
+// migrated content stays byte-for-byte identical to the original pages.
+interface Props {
+  headHtml?: string;
+  bodyHtml?: string;
+}
+const { headHtml = '', bodyHtml = '' } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" href="/static/NEC.png" />
+    <Fragment set:html={headHtml} />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-shell">
+        <a class="site-brand" href="/">
+          <span class="brand-mark"><img src="/static/NEC.png" alt="NotEnoughCoins" width="32" height="32" decoding="async" /></span>
+          <span class="brand-copy">
+            <strong>NotEnoughCoins</strong>
+            <span>Hypixel SkyBlock money-making guides and tool deep links.</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/guides">Guides</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="/tos">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <Fragment set:html={bodyHtml} />
+
+    <footer class="site-footer">
+      <div class="site-shell">
+        <p>NotEnoughCoins. The mod was discontinued; the brand lives on as a SkyBlock guide and tool hub.</p>
+        <div class="footer-links">
+          <a href="/">Home</a>
+          <a href="/guides">Guides</a>
+          <a href="/faq">FAQ</a>
+          <a href="/tos">Historic terms</a>
+          <a href="https://coflnet.com/privacy">Privacy</a>
+          <a href="https://coflnet.com/imprint">Imprint</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
