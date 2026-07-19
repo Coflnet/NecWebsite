@@ -1,0 +1,20 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+// One page per MDX guide in src/content/guides. `build.format: 'file'` emits
+// each as dist/guides/<slug>.html, so URLs stay identical (e.g.
+// /guides/guardian-slayer-guide-2026). Static month-archive/.astro pages in
+// this folder take routing priority over this catch-all where they overlap.
+export async function getStaticPaths() {
+  const guides = await getCollection('guides', (e) => !e.data.draft);
+  return guides.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<GuideLayout slug={entry.id} frontmatter={entry.data}>
+  <Content />
+</GuideLayout>

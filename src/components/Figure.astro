@@ -1,0 +1,19 @@
+---
+// Self-hosted image with required alt text + optional caption. Only use images
+// served from our own domain (public/static/...), never hotlinked third-party
+// images — this keeps the site free of third-party data transfer and cookie /
+// consent-banner obligations under GDPR/TDDDG.
+//   <Figure src="/static/guides/foo.png" alt="..." caption="..." width={1200} height={675} />
+interface Props {
+  src: string;
+  alt: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+}
+const { src, alt, caption, width, height } = Astro.props;
+---
+<figure class="article-figure">
+  <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

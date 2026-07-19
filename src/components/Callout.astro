@@ -1,0 +1,14 @@
+---
+// Highlighted note / warning box. Use in MDX:
+//   <Callout>Plain note.</Callout>
+//   <Callout variant="warning" title="Watch out">Risky bit.</Callout>
+interface Props {
+  variant?: 'note' | 'warning';
+  title?: string;
+}
+const { variant = 'note', title } = Astro.props;
+---
+<div class={`note${variant === 'warning' ? ' warning' : ''}`}>
+  {title && <strong>{title}</strong>}
+  <slot />
+</div>

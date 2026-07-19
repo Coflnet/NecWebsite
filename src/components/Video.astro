@@ -1,0 +1,23 @@
+---
+// Self-hosted video (own domain / CDN only — no YouTube/Vimeo iframes). Per
+// German DPA guidance (LfDI Baden-Württemberg) a self-hosted <video> makes no
+// third-party request and needs no consent banner, unlike an embedded YouTube
+// player which transmits the visitor's IP to Google before consent. A poster
+// image is shown until the user presses play.
+//   <Video src="/static/guides/foo.mp4" poster="/static/guides/foo.jpg" caption="..." />
+interface Props {
+  src: string;
+  /** Optional second source for broader codec support, e.g. a .webm alongside .mp4. */
+  srcWebm?: string;
+  poster?: string;
+  caption?: string;
+}
+const { src, srcWebm, poster, caption } = Astro.props;
+---
+<figure class="article-figure">
+  <video controls preload="none" poster={poster} playsinline>
+    {srcWebm && <source src={srcWebm} type="video/webm" />}
+    <source src={src} type="video/mp4" />
+  </video>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

@@ -41,6 +41,7 @@ const { headHtml = '', bodyHtml = '' } = Astro.props;
     </header>
 
     <Fragment set:html={bodyHtml} />
+    <slot />
 
     <footer class="site-footer">
       <div class="site-shell">

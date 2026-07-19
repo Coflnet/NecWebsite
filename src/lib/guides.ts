@@ -16,14 +16,21 @@ const MONTH_ARCHIVES = new Set([
   'july-2026',
 ]);
 
-const guidePages = import.meta.glob('/src/pages/guides/*.astro');
+// Individual guides are MDX in src/content/guides; a handful of listing/legacy
+// pages may still live as .astro under src/pages/guides during the migration.
+// Count both, de-duplicated by slug, excluding month archives + the index.
+const guidePages = {
+  ...import.meta.glob('/src/content/guides/*.mdx'),
+  ...import.meta.glob('/src/pages/guides/*.astro'),
+};
 
 function slugOf(path: string): string {
-  return path.split('/').pop()!.replace(/\.astro$/, '');
+  return path.split('/').pop()!.replace(/\.(astro|mdx)$/, '');
 }
 
 /** Number of individual money-making / update / trend guides (excludes month archives). */
-export const guideCount = Object.keys(guidePages).filter((path) => {
-  const slug = slugOf(path);
-  return slug !== 'index' && !MONTH_ARCHIVES.has(slug);
-}).length;
+export const guideCount = new Set(
+  Object.keys(guidePages)
+    .map(slugOf)
+    .filter((slug) => slug !== 'index' && !slug.includes('[') && !MONTH_ARCHIVES.has(slug)),
+).size;
