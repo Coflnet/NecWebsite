@@ -18,6 +18,12 @@ interface Props {
     ogTitle?: string;
     ogDescription?: string;
     ogImage: string;
+    featuredImage?: {
+      src: string;
+      alt: string;
+      width: number;
+      height: number;
+    };
     schemaType: 'BlogPosting' | 'Article';
     tools: { label: string; href: string }[];
     bestFor?: string;
@@ -28,6 +34,9 @@ interface Props {
 
 const { slug, frontmatter: fm } = Astro.props;
 const url = `https://notenoughcoins.net/guides/${slug}`;
+const socialImage = fm.featuredImage
+  ? new URL(fm.featuredImage.src, 'https://notenoughcoins.net').href
+  : fm.ogImage;
 
 const iso = (d: Date) => d.toISOString().slice(0, 10);
 const human = (d: Date) =>
@@ -41,7 +50,7 @@ const headHtml = [
   `<meta property="og:type" content="article">`,
   `<meta property="og:title" content="${fm.ogTitle ?? fm.title}">`,
   `<meta property="og:description" content="${fm.ogDescription ?? fm.description}">`,
-  `<meta property="og:image" content="${fm.ogImage}">`,
+  `<meta property="og:image" content="${socialImage}">`,
   `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': fm.schemaType,
@@ -51,6 +60,7 @@ const headHtml = [
     dateModified: iso(fm.dateModified),
     author: { '@type': 'Organization', name: 'NotEnoughCoins' },
     publisher: { '@type': 'Organization', name: 'Coflnet GmbH' },
+    image: socialImage,
     mainEntityOfPage: url,
     url,
   })}</script>`,
@@ -85,6 +95,20 @@ const headHtml = [
           }
         </p>
         <p class="lede">{fm.lede}</p>
+
+        {fm.featuredImage && (
+          <figure class="article-feature-image">
+            <img
+              src={fm.featuredImage.src}
+              alt={fm.featuredImage.alt}
+              width={fm.featuredImage.width}
+              height={fm.featuredImage.height}
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </figure>
+        )}
 
         <slot />
 

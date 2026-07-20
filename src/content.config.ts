@@ -6,6 +6,12 @@ import { glob } from 'astro/loaders';
 // BreadcrumbList JSON-LD, visible breadcrumb, "last verified" line), so the MDX
 // body is nothing but readable content + rich-content components.
 const linkList = z.array(z.object({ label: z.string(), href: z.string() }));
+const featuredImage = z.object({
+  src: z.string(),
+  alt: z.string(),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+});
 
 const guides = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/guides' }),
@@ -23,6 +29,8 @@ const guides = defineCollection({
     ogTitle: z.string().optional(),
     ogDescription: z.string().optional(),
     ogImage: z.string().default('https://notenoughcoins.net/static/NEC.png'),
+    /** Optional image displayed below the lede and reused for social previews. */
+    featuredImage: featuredImage.optional(),
     schemaType: z.enum(['BlogPosting', 'Article']).default('BlogPosting'),
     /** Aside: "Best paired tools" deep links. */
     tools: linkList.default([]),
