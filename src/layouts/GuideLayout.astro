@@ -37,6 +37,8 @@ const url = `https://notenoughcoins.net/guides/${slug}`;
 const socialImage = fm.featuredImage
   ? new URL(fm.featuredImage.src, 'https://notenoughcoins.net').href
   : fm.ogImage;
+const socialTitle = fm.ogTitle ?? fm.title;
+const socialDescription = fm.ogDescription ?? fm.description;
 
 const iso = (d: Date) => d.toISOString().slice(0, 10);
 const human = (d: Date) =>
@@ -48,9 +50,26 @@ const headHtml = [
   `<link rel="canonical" href="${url}">`,
   `<meta property="og:url" content="${url}">`,
   `<meta property="og:type" content="article">`,
-  `<meta property="og:title" content="${fm.ogTitle ?? fm.title}">`,
-  `<meta property="og:description" content="${fm.ogDescription ?? fm.description}">`,
+  `<meta property="og:site_name" content="NotEnoughCoins">`,
+  `<meta property="og:title" content="${socialTitle}">`,
+  `<meta property="og:description" content="${socialDescription}">`,
   `<meta property="og:image" content="${socialImage}">`,
+  `<meta property="og:image:secure_url" content="${socialImage}">`,
+  ...(fm.featuredImage
+    ? [
+        `<meta property="og:image:type" content="image/webp">`,
+        `<meta property="og:image:width" content="${fm.featuredImage.width}">`,
+        `<meta property="og:image:height" content="${fm.featuredImage.height}">`,
+        `<meta property="og:image:alt" content="${fm.featuredImage.alt}">`,
+      ]
+    : []),
+  `<meta name="twitter:card" content="summary_large_image">`,
+  `<meta name="twitter:title" content="${socialTitle}">`,
+  `<meta name="twitter:description" content="${socialDescription}">`,
+  `<meta name="twitter:image" content="${socialImage}">`,
+  ...(fm.featuredImage
+    ? [`<meta name="twitter:image:alt" content="${fm.featuredImage.alt}">`]
+    : []),
   `<script type="application/ld+json">${JSON.stringify({
     '@context': 'https://schema.org',
     '@type': fm.schemaType,
