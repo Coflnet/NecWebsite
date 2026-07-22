@@ -93,7 +93,23 @@ All sample directories were removed from the project after selection. Historical
 4. Use the built-in image generator with one call per distinct style.
 5. Validate the output against the hard rules above.
 6. For exact UI work, composite the official UI capture after generation if the model changes slot count, spacing, or text.
-7. Save candidates as WebP without replacing a live asset until one is approved.
+7. Keep unapproved generator output outside `public/static/guides`; do not replace a live asset during candidate review.
+8. After approval, run `npm run image:feature -- /absolute/path/to/generated-image.png article-slug`. Add `--force` only when intentionally replacing an existing approved image.
+9. Verify the generated master, update the article frontmatter, then run `npm run build`; the build creates and verifies all responsive derivatives.
+
+### Compression and responsive-output contract
+
+The `image:feature` command is the only supported promotion path from generated artwork to a live feature image. It performs the following steps consistently:
+
+- auto-rotates the input and uses attention-aware cropping to normalize it to the required `1672 × 941` composition;
+- flattens transparency against the site's dark background so the encoder does not retain an unnecessary alpha channel;
+- writes the social/Discord master as `<article-slug>.webp` at WebP quality 75 with encoder effort 6;
+- refuses to overwrite an approved image unless `--force` is supplied;
+- rejects inputs below `1280 × 720`, preventing low-resolution generator output from being upscaled silently.
+
+Only the compressed master is committed. The development and production prebuild step runs `scripts/generate-responsive-images.mjs`, producing ignored `640`, `960`, and `1280` pixel derivatives at WebP quality 65 with encoder effort 6. These output widths must stay synchronized with the `srcset` widths in `src/layouts/GuideLayout.astro`. The full-size master remains the Open Graph image; browsers select the generated variants for the visible article image.
+
+Guide images use ordinary Git rather than Git LFS, avoiding a GitHub bandwidth dependency in Cloudflare Pages. The reproducible derivatives are excluded from Git and rebuilt from the seven masters on every deployment. The `prebuild` image-signature check stops deployment if any generated output is invalid.
 
 ## Recorded prompts
 

@@ -3,6 +3,8 @@
 // common <head> tags. Per-page <head> markup (title, description, canonical, OG,
 // JSON-LD) and the full <main> body are passed in as raw HTML strings so the
 // migrated content stays byte-for-byte identical to the original pages.
+import globalStyles from '../../public/static/style.css?raw';
+
 interface Props {
   headHtml?: string;
   bodyHtml?: string;
@@ -15,7 +17,7 @@ const { headHtml = '', bodyHtml = '' } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/static/style.css" />
+    <style is:inline set:html={globalStyles} />
     <link rel="icon" href="/static/NEC.png" />
     <Fragment set:html={headHtml} />
   </head>
@@ -23,7 +25,7 @@ const { headHtml = '', bodyHtml = '' } = Astro.props;
     <header class="site-header">
       <div class="site-shell">
         <a class="site-brand" href="/">
-          <span class="brand-mark"><img src="/static/NEC.png" alt="NotEnoughCoins" width="32" height="32" decoding="async" /></span>
+          <span class="brand-mark"><img src="/static/NEC-64.webp" alt="NotEnoughCoins" width="32" height="32" decoding="async" /></span>
           <span class="brand-copy">
             <strong>NotEnoughCoins</strong>
             <span>Hypixel SkyBlock money-making guides and tool deep links.</span>

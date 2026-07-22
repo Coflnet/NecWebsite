@@ -39,6 +39,12 @@ const socialImage = fm.featuredImage
   : fm.ogImage;
 const socialTitle = fm.ogTitle ?? fm.title;
 const socialDescription = fm.ogDescription ?? fm.description;
+const responsiveImageSrcset = fm.featuredImage
+  ? [640, 960, 1280]
+      .map((width) => `${fm.featuredImage!.src.replace(/\.webp$/, `-${width}.webp`)} ${width}w`)
+      .concat(`${fm.featuredImage.src} ${fm.featuredImage.width}w`)
+      .join(', ')
+  : undefined;
 
 const iso = (d: Date) => d.toISOString().slice(0, 10);
 const human = (d: Date) =>
@@ -119,6 +125,8 @@ const headHtml = [
           <figure class="article-feature-image">
             <img
               src={fm.featuredImage.src}
+              srcset={responsiveImageSrcset}
+              sizes="(max-width: 720px) calc(100vw - 5.5rem), (max-width: 900px) calc(100vw - 7rem), 750px"
               alt={fm.featuredImage.alt}
               width={fm.featuredImage.width}
               height={fm.featuredImage.height}
