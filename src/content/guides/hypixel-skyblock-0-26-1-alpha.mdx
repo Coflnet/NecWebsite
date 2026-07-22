@@ -1,11 +1,12 @@
 ---
-title: "Hypixel SkyBlock 0.26.1 Alpha Preview: Healing Revamp, Farming Rework & Harvest Feast Changes"
-description: "A cautious, alpha-only preview of Hypixel SkyBlock 0.26.1: the Farming Armor rename, Bookshelf Power removal, Harvest Feast Sprayonator rework and the Healing Revamp v2 changes to Dungeons, Slayers and Kuudra. Not live yet."
-kicker: Alpha Watch
-lede: "0.26.1 is currently an alpha release candidate only. As of July 15, 2026 it is not live on the main SkyBlock servers, and everything below can still change before any real release: numbers get retuned, mechanics get reverted and entire systems sometimes get cut between an alpha build and launch. Treat this as a preview of direction, not a patch note you can trade against. The headline content is a new-player quality-of-life pass, a full Farming Armor rework, a Harvest Feast balance patch and a second attempt at the Healing Revamp that touches Dungeons, Slayers and Kuudra."
-datePublished: 2026-07-27
-dateModified: 2026-07-27
+title: "Hypixel SkyBlock 0.26.1 Update Guide: Healing Revamp, Harvest Feast & New-Player Changes"
+description: "Live Hypixel SkyBlock 0.26.1 guide: Vitality and healing changes, easier Catacombs progression, Harvest Feast additions and farming upgrades."
+kicker: Patch Notes
+lede: "Hypixel SkyBlock 0.26.1 went live on July 22, 2026. It is a large polishing update rather than a new island: early farming and accessory progression are easier to understand, Harvest Feast gains new items and Sprayonator tiers, and healing is rebuilt around Vitality as a spendable resource. The damage pass shipped alongside it matters just as much, lowering incoming damage across Dungeons, Slayers, Kuudra, the Crimson Isle and several other combat areas."
+datePublished: 2026-07-22
+dateModified: 2026-07-22
 patch: '0.26.1'
+ogDescription: "0.26.1 makes Vitality a healing resource, smooths early farming and accessory progression, expands Harvest Feast and retunes damage across Dungeons, Slayers and Kuudra."
 featuredImage:
   src: /static/guides/hypixel-skyblock-0-26-1-alpha.webp
   alt: Minecraft-style farmer beside four armor stands showing the Farmhand, Haymaker, Sprout and Tater farming progression
@@ -17,8 +18,8 @@ tools:
   - { label: BazaarTracker demand, href: 'https://bazaartracker.com/demand' }
   - { label: BazaarPro market trends, href: 'https://pro.skyblock.bz/features/market-trends' }
   - { label: Skyblock.bz crash risk, href: 'https://skyblock.bz/crash' }
-bestFor: Players who want to understand where 0.26.1 alpha is heading without making irreversible market bets on numbers that can still change before a live release.
-sourceNote: Built from the 0.26.1 alpha release candidate patch notes and wiki changelog dated July 15, 2026, cross-checked against creator Derailious's July 16 alpha coverage of the Healing Revamp v2 and Harvest Feast Sprayonator changes.
+bestFor: Players returning for 0.26.1, farmers evaluating the Harvest Feast changes, and combat players who need to rebuild healing habits for Slayers, Dungeons, Kuudra or the Crimson Isle.
+sourceNote: "Built from Hypixel's official July 22 live patch notes and two videos published in the preceding 48 hours: Derailious's final-alpha change recap and Skeptik's hands-on Blaze Slayer testing. Creator observations are identified separately from confirmed patch-note facts."
 related:
   - { label: 'Hypixel SkyBlock 0.26.0 Update Guide', href: '/guides/hypixel-skyblock-0-26-0-update' }
   - { label: "Post-Lotus Atoll Economy Recap: What Settled and What Didn't", href: '/guides/post-lotus-atoll-economy-recap' }
@@ -28,75 +29,158 @@ related:
 
 import Callout from '../../components/Callout.astro';
 
-<Callout title="Alpha caveat, repeated on purpose:">
-This preview is built from the 0.26.1 alpha RC patch notes and wiki changelog dated July 15, 2026, cross-checked against creator Derailious's July 16 alpha coverage. Do not make irreversible market bets — dumping stock, panic-buying replacements or emptying a bazaar position — based on alpha numbers alone. For what is actually confirmed and live right now, see the [Hypixel SkyBlock 0.26.0 Update Guide](/guides/hypixel-skyblock-0-26-0-update). This page is published as an end-of-month checkpoint on where the alpha stands, and will be updated again around the live release of 0.26.1 once the final numbers are locked in.
+<Callout title="Release status and sources:">
+0.26.1 is live as of July 22. This guide is based on the [official Hypixel 0.26.1 patch notes](https://hypixel.net/threads/hypixel-skyblock-0-26-1-new-player-improvements-harvest-feast-changes-healing-revamp-and-more.6127383/), then cross-checked against transcript material from [Derailious's final-alpha changes recap](https://www.youtube.com/watch?v=vX1O1BxyAIM) and [Skeptik's hands-on Blaze Slayer test](https://www.youtube.com/watch?v=qA3KLU8lqgg). Both videos were recorded on the release-candidate build shortly before launch, so their testing is useful practical context, not a substitute for the live notes.
 </Callout>
 
-## New-player quality of life
+## The short version
 
-A large share of 0.26.1 is aimed at smoothing the early game rather than adding new endgame grind. Beginner Sacks are a new tier that sits below Small Sacks, holding 640 of a beginner item subset, unlocked at Collection Tier II or for 250 coins from skill merchants. That is a cheap, low-friction upgrade path that mostly matters for brand-new accounts and Ironman starts.
+The patch has three headline changes:
 
-The Accessory Bag also gets a naming and slot change: default slots rise to 9, and "Magical Power" is renamed "Accessory Power" everywhere in the UI, with accessories now showing their Accessory Power value directly on the item instead of forcing players to look it up. Redstone Collection is condensed to 9 tiers, and Personal Compactor recipes need noticeably less Redstone to build; Personal Compactor 4000, for example, drops to 28 Enchanted Redstone in the alpha notes. If that number holds, it is a real cost reduction for a very commonly crafted item, and Enchanted Redstone demand could soften slightly on the back of it.
+- **New-player progression is clearer and cheaper.** Beginner Sacks, a linear farming-armor path, nine default Accessory Bag slots and cheaper Personal Compactors remove several early friction points.
+- **Harvest Feast has more long-term upgrades.** The Orchid Mantis Pet, Thorny equipment reforge, permanent Overbloom burgers and two Sprayonator upgrades create new progression targets, while the Disco Destination now only handles offline Pests.
+- **Healing is now a limited combat resource.** Vitality no longer multiplies healing; it pays for healing abilities and regenerates over time. Hypixel paired that restriction with broad enemy-damage reductions and a much stronger early-to-mid Catacombs stat curve.
 
-Smaller QoL items worth knowing: a `/warps` alias, `/island` and `/privateisland` aliases, and the Adventurer NPC being renamed to Combat Merchant. None of these move the economy on their own, but they are the kind of change that tends to ship as-is even when bigger systems get revised.
+This is not an alpha watch anymore. The mechanics below are live, although Hypixel says it remains open to post-release damage and healing adjustments if particular content became harder than intended.
 
-## Farming Armor is being fully rebuilt
+## New-player improvements
 
-This is the biggest structural change in the alpha build. The old Farming Armor line is renamed and restructured into a single linear progression:
+Beginner Sacks are a new entry tier that holds up to 640 of each supported item. Their recipes unlock at Collection Tier II, or new players can buy them from the relevant skill merchant for 250 coins. They are intentionally small, but remove the inventory-management wall before a player can afford normal Sacks.
 
-| Old name | New name | Unlock | Notes |
+Farming armor now follows one readable upgrade chain:
+
+| Tier | Previous name | Live 0.26.1 name | Progression |
 | --- | --- | --- | --- |
-| Farm Suit | Farmhand Armor | — | Entry tier |
-| Farm Armor | Haymaker Armor | Wheat Collection VI | Common rarity, new hay-bale helmet, cheap Enchanted Wheat recipe |
-| Pumpkin Armor | Sprout Armor | Carrot Collection VIII | +15 Farming Fortune per piece |
-| Melon Armor | Tater Armor | Potato Collection IX | — |
+| I | Farm Suit | Farmhand Armor | Moved earlier in Wheat Collection |
+| II | Farm Armor | Haymaker Armor | Upgrades from Farmhand; cheaper and now COMMON |
+| III | Pumpkin Armor | Sprout Armor | Upgrades from Haymaker; Carrot Collection VIII |
+| IV | Melon Armor | Tater Armor | Upgrades from Sprout; Potato Collection IX |
+| Later | — | Cropie → Squash → Fermento → Helianthus | Existing late-game line continues from Tater |
 
-Rabbit Armor gets a full redesign rather than a rename: it uses a skull helmet, drops Farming Fortune entirely from its stat line, and instead grants Speed and Defense, with a set bonus of permanent Jump Boost III while sneaking. Abilities and gemstone slots are removed from the early sets in this line, which reads as a deliberate simplification so new farmers are not chasing enchant-and-gemstone optimization before they even have a full set.
+Rabbit Armor is cheaper and now focuses on mobility and Jump Boost rather than Farming Fortune. The Barn gains a Husbandry Merchant selling Basic Animal Axes; Jake's previous axes become stronger Advanced Animal Axes and require their Basic version. The Farmhand NPC now gives a COMMON Chicken Pet, the Rookie Hoe gains +5 Farming Fortune, and a new Rookie Farming Axe joins the Farm Merchant. Basic Gardening tools rise to +10 Farming Fortune and Advanced Gardening tools to +15.
 
-Supporting the rework, a new Husbandry Merchant appears in the Barn selling "Basic" animal axes, while the old axes are renamed "Advanced" to make room for them. The Rookie Hoe is buffed with +5 Farming Fortune, another signal that the early farming curve is being flattened rather than just relabeled.
+Accessory progression is less opaque too. Every profile starts with nine Accessory Bag slots, Redstone Collection is condensed to nine tiers, and the nine slots removed from that collection are the same nine now granted by default. "Magical Power" is renamed **Accessory Power**, accessories display their contribution directly, and the bag and Power Stone descriptions explain the system more clearly.
 
-## Bookshelf Power is being removed entirely
+Other useful changes include:
 
-Bookshelf Power is cut from the game in this alpha build. Enchanted Bookshelves become legacy items with no remaining gameplay use once no enchant needs them.
+- Personal Compactors require less Redstone at every tier.
+- Experience Bottles no longer have an NPC purchase cap.
+- Bookshelf Power is removed; no enchantment requires it anymore.
+- Rosetta's early gear is stronger, and the Bartender gives an Undead Sword when his quest begins.
+- The new **Magic For Pets In A Hurry** Pet Item unlocks through Sugar Cane Collection VII.
+- `/warps`, `/island` and `/privateisland` are new command aliases.
+- Equipment, Accessories, Runes, Sacks, Minion items and Compactors receive clearer prompts or descriptions.
 
-<Callout variant="warning" title="If this ships as-is:">
-It is a direct hit to a long-running stockpile item: Enchanted Bookshelf value on the auction house and bazaar would have real reason to collapse toward little more than minion-fuel value, since their entire demand driver disappears. Anyone sitting on a large Enchanted Bookshelf stack should treat this as a warning to watch, not a reason to fire-sale today — the mechanic could still be reworked instead of deleted before a live release. Track the listing side with [SkyCofl bazaar](https://sky.coflnet.com/bazaar) and watch for early sentiment shifts with [SkyCofl top movers](https://sky.coflnet.com/topMovers).
+<Callout variant="warning" title="Enchanted Bookshelves lost their use:">
+Bookshelf Power is not merely reduced: it is gone, and Enchanted Bookshelves no longer have an enchanting function. That removes their primary demand driver. Do not assume an old historical price is a floor; check current orders and volume before buying or holding a large stack.
 </Callout>
 
-## Harvest Feast gets a feedback-driven balance pass
+## Harvest Feast: new progression and a narrower Disco Destination
 
-Harvest Feast is getting adjusted based on community feedback rather than a ground-up redesign. New content includes the Orchid Mantis Pet (crafted from Floral Gelatin and Enchanted Egg), which bases around Overbloom and Speed and carries the Swift Sickles perk, converting every 3 Speed into +1 Farming Fortune, plus a farming-tool-XP boost and a small chance to find Jelly or Plant Matter while farming. There is also a new Blooming Thorns reforge stone offering a "Thorny" reforge that adds Farming Fortune and Overbloom, scaling with Thorns tier, and a new Feast Burger consumable usable up to 5 times, each use granting a permanent +1 Overbloom.
+The new Harvest Feast items add permanent and equipment-based Overbloom progression:
 
-<Callout title="Sprayonator rework, and why it happened:">
-The old "Buzzy Bee's Fantabulous Disco Destination" add-on is removed outright and replaced with tiered nozzle upgrades — Juicy Nozzle upgrading into Juicy Sprayonator, Groovy Nozzle into Groovy Sprayonator — while the base Sprayonator itself is slightly nerfed. Hypixel's own stated reason is that the Disco Destination let pests spawn directly on top of it, which was being actively abused by cheaters and macro users, and that "they shouldn't have released it like that." Creator Derailious agrees the change needed to happen but notes it will upset a lot of players who had built AFK farming routines around it. Read this as a direct nerf to a macro-adjacent AFK farming strategy, not a base-Sprayonator nerf for normal manual play.
+| Item | What it does |
+| --- | --- |
+| Orchid Mantis Pet | Grants Overbloom and Speed; up to +20% Farming Tool XP, up to +1 Farming Fortune per 3 Speed, and up to a 0.02% chance for Jelly or Plant Matter while farming |
+| Blooming Thorns | Applies the Thorny reforge to Equipment, granting Farming Fortune and Overbloom plus more Overbloom per Thorns tier on armor |
+| Feast Burger With A Side of Deepfries | Consumable up to five times for a permanent +1 Overbloom each time |
+| Juicy Nozzle | Upgrades the Sprayonator to 45-minute effects and lets three materials provide twice the base effect |
+| Salty Nozzle | Upgrades Juicy to a 60-minute effect and lets five materials provide three times the base effect |
+
+The release path is **Sprayonator → Juicy Sprayonator → Salty Sprayonator**. The Salty Nozzle uses Salted Sunflower Seeds; it is not the earlier alpha's Groovy Nozzle. Derailious's transcript specifically catches this late rename and the switch to a 3× top-tier spray effect.
+
+Buzzybee's Fantabulous Disco Destination survived the alpha, but only corrals Pests that spawn while the player is offline. It no longer concentrates actively spawned Pests. Its recipe loses Salted Sunflower Seeds and uses slightly less Botroot. That preserves an offline quality-of-life use without restoring the active Pest loop that caused the original balance concern.
+
+Several existing farming items changed as well:
+
+- Jacob's Participation Medal becomes the **Jacob's Entertainment System**, a Minion Upgrade; the old item is legacy.
+- Feast events now select four crops per season instead of three.
+- Every Feast RARE CROP now has a 50,000-coin NPC sell price.
+- Each Donation Tier awards five Carnival Tickets.
+- The Rarefinder Chip caps at +50 Overbloom instead of +60.
+- Lucky Clover and Poignant Lucky Clover grant +7 and +13 Overbloom.
+- MYTHIC Elephant gains +50 base Farming Fortune and Abundant Harvest rises to +20% Sowdust.
+- Mooshroom Cow gains a chance to find Cheese or Dung; Bee gains a chance to find Honey Jars.
+- Royal Jelly needs half as much Floral Gelatin, and Bea now sells Honey Dippers that upgrade a COMMON Bee.
+
+The clearest economic winners are materials needed for the new permanent or high-tier upgrades, but launch demand can be extremely front-loaded. Compare actual volume with [SkyCofl top movers](https://sky.coflnet.com/topMovers) before chasing a spike.
+
+## Healing Revamp: Vitality is now something you spend
+
+Every player has 100 base Vitality. Your Vitality stat is now both the maximum size of a resource pool and the basis for its regeneration. The pool regenerates by **5% of maximum Vitality per second**: 100 Vitality restores 5 per second, while 200 restores 10. Vitality no longer multiplies the amount healed.
+
+That changes healing from "cast whenever mana allows" into a pacing decision. A few of the most important live values are:
+
+| Source | Live behavior |
+| --- | --- |
+| Zombie Swords | Cost 25 Vitality; heal 320 / 420 / 500 HP depending on tier, with 20% of that healing shared nearby |
+| Healing Wands | Cost 25 Vitality; provide tier-dependent flat healing over 5–6 seconds |
+| Gloomlock Grimoire | Heals 1,000 HP for 45 Vitality with no cooldown; Life Tap costs 800 HP and no longer applies its old damage debuff |
+| Power Orbs | Retain the 50% max-mana cost and also cost 50 Vitality; provide Health Regen plus flat HP/s, with teammate healing halved |
+| Flares | Cost 10 Vitality in addition to mana and provide 30 / 40 / 50 HP/s on the Crimson Isle and in Kuudra's Lair |
+| Wither Shield | Costs 50 Vitality; absorption scales from Catacombs level, keeps 10% damage reduction, no longer heals on expiry, and refunds unused Vitality based on shield remaining |
+| Wither Cloak Sword | Uses veil layers; each layer costs 30 Vitality and blocks up to 1,000 damage before Dungeon scaling |
+
+Healing enchants now use flat values. Life Steal heals a fixed amount per hit, Drain grants Vitality per hit, Vampirism heals on kill, and Rejuvenate and Respite grant Health Regen. Refrigerate caps at 600 Defense across four pieces, and Last Stand becomes a 10-second buff triggered below 40% health with a 30-second cooldown.
+
+The Mastiff and Pooch Sword pairing is also rebuilt. Mastiff no longer converts its enormous old health pool into damage; it receives new flat stats and up to +40% HP based on Crit Damage. Pooch Sword becomes a more conventional Wolf Slayer weapon, gaining damage from Wolf Slayer level and multipliers against Wolves and while using Mastiff or Armor of the Pack.
+
+<Callout title="What to change in your loadout:">
+Carry an intentional active-healing option instead of assuming passive hit healing will refill you. Power Orbs and Wither Shield compete for a 50-Vitality chunk, while a Healing Wand or Zombie Sword costs 25. Drain is now resource generation, not direct healing, so pairing it with an actual Vitality spender is the important part.
 </Callout>
 
-On the economy side, the Feast rare-crop NPC sell price is raised to 50,000 coins, which is a meaningful and quantifiable Ironman-friendly buff since it is a guaranteed NPC floor rather than a bazaar-dependent number. The Feast crop rotation is also raised from 3 to 4 crops per season, spreading demand across more items at once. On the nerf side, the Rarefinder Chip's max Overbloom bonus drops from +60 to +50, and several pet perks get tweaked, including Elephant, Mooshroom Cow and Bee Pet.
+## Slayers: less incoming damage, but less passive recovery
 
-## Healing Revamp v2: Dungeons, Slayers and Kuudra
+Killing a Slayer boss now starts a recovery effect. Healing per second depends on boss tier—40 at T1, 80 at T2, 120 at T3, 160 at T4 and 200 at T5—while duration rises from six seconds at base to ten seconds at Slayer Level 8. It does not activate in the Rift.
 
-This is Hypixel's second attempt at the Healing Revamp, and it is still clearly in flux even within the alpha build. The core change reworks Vitality into a resource stat that governs how often healing abilities can be cast, rather than a passive flat-healing stat. Sea creature damage and Mythological Event boss damage both move away from percent-of-max-HP "true damage" toward flat or stat-relative numbers, which generally lowers burst damage from those sources.
+Enderman Slayer damage falls substantially: a T4's base damage drops from 21,000 to 13,500, Dissonance to 5,400, Malevolent Hitshield to 2,000 and T4 Nukekubi Fixations to 1,500.
 
-The Dungeons changes are the largest single piece: the stat-scaling curve is reworked to help sub-Catacombs-50 players significantly.
+Blaze Slayer receives major reductions. Burningsoul Demon damage drops from 30,000 to 9,000, the post-kill polarization immunity lasts ten seconds, and Blaze Pillars can be destroyed without a Wisp Pet. T4 Inferno Demonlord flat true damage is 385 / 575 / 955 across its three phases, replacing percentage-based true damage. The Demonslayer Gauntlet rises from +5 to +20 True Defense and gains 1.15× damage against Infernal mobs.
 
-| Floor | Old stat boost | New stat boost | Effect |
-| --- | --- | --- | --- |
-| Catacombs 30 | ~205% | ~285% | roughly +75% damage, +45% effective HP |
-| Catacombs 40 | ~315% | ~385% | — |
-| Catacombs 50 | already well-scaled | small bump only | — |
+Skeptik tested this exact release-candidate direction across multiple T4 Blaze bosses. His practical result was more nuanced than "damage nerf equals easier": the boss attacks were manageable, but starting a boss below full health was much riskier because the old passive recovery was gone. The post-kill Slayer heal also amounts to only 2,000 total HP in its best T5/Slayer-8 case, which can be small for a late-game health pool. His recommendation was to plan around an active heal such as a Wand or Wither Impact rather than relying on Drain alone.
 
-Regular mob damage from the Entrance through Floor 6 is reduced, trap damage is cut sharply, and the four classes — Berserker, Mage, Healer and Tank — are being reworked alongside the stat curve. Derailious's read on this in his July 16 coverage is that it makes Floor 7 and Master Mode 7 realistically achievable for players in the Catacombs 30–40 range, who were previously squeezed by a curve tuned around much higher stats.
+Skeptik also compared Demonslayer Gauntlet with Manticore Claw in the alpha test. Demonslayer was far cheaper and much safer because of its True Defense, while Manticore still produced slightly better damage in his repeated dummy tests, particularly from damage-over-time effects. Treat that as one creator's pre-release test—not a universal best-in-slot ruling—but it makes Demonslayer the obvious value option to retest on live.
 
-Slayers get broad damage reductions across the board, Blaze Slayer especially.
+## Dungeons: a much stronger progression curve
 
-<Callout variant="warning" title="Don't read this as fixed:">
-Derailious explicitly states that Blaze Slayer is still not in a good spot even for max-geared players in this alpha build, so do not read "damage reduced" as "Blaze Slayer is now easy." It is a step in that direction, not a finished one.
-</Callout>
+All Catacombs healing now scales with Dungeon Stat Boost. Health Regen and Vitality on items are not separately boosted, because Health Regen already benefits from the larger health pool and each point of Vitality already buys Dungeon-scaled healing.
 
-Crimson Isle and Kuudra both get direct tuning. The loot damage-contribution threshold is lowered to 250,000, making it easier to qualify for loot without carrying the whole fight. Ashfang's Gravity Orb changes from an instant one-shot to 5,000 damage per second, which is a large survivability change for anyone who has been oneshot by it before. Kuudra mob damage is halved outright.
+The new Catacombs curve gives earlier levels far more stats:
 
-Structurally, the Ferocity stat is effectively replaced by an Attack-Speed-based system that caps at 2x DPS, and Hypixel says it is open to feedback on an Intelligence-based alternative instead — worth flagging to Hypixel directly if you have strong feelings on which stat should govern the cap. A Mastiff Armor crit-damage bug is fixed in the same build. On the fishing side, Mithril Grubbers now drop Plasma directly, giving a new farmable path to the X-55 drill material; if this goes live as-is, expect Plasma's bazaar price to soften somewhat as a second reliable supply source comes online.
+| Catacombs level | Old → new stat boost | Approximate impact from Hypixel |
+| --- | --- | --- |
+| 10 | 55% → 85% | ~40% more damage, ~25% more EHP |
+| 20 | 120% → 185% | ~75% more damage, ~45% more EHP |
+| 30 | 205% → 285% | ~75% more damage, ~45% more EHP |
+| 40 | 315% → 385% | ~50% more damage, ~30% more EHP |
+| 50 | 475% → 485% | ~5% more damage, ~3% more EHP |
 
-## What to actually do with this information
+Dungeon mob damage gets a baseline 10% reduction, with further reductions before Master Mode. Many difficult-to-avoid sources receive larger cuts, and traps are less punitive: Fire and Arrow Traps fall from 50% to 15% HP, Crusher from 100% to 30%, and Tripwire from 33% to 15%. Numerous percentage-true-damage boss mechanics become regular flat damage instead.
 
-Nothing here should trigger an irreversible market move today. The useful actions right now are: note which stockpiles look exposed (Enchanted Bookshelves chief among them) so you can react quickly if the change survives to live, avoid over-investing in systems that are being visibly reworked (early Farming Armor gemstone slots, the old Sprayonator Disco Destination loop), and keep an eye on official Hypixel alpha feedback threads if you want a say in open questions like the Ferocity-to-Attack-Speed swap. Use [SkyCofl top movers](https://sky.coflnet.com/topMovers) and [BazaarTracker demand](https://bazaartracker.com/demand) to see whether the market is already pricing in alpha rumors before a live patch, and check [Skyblock.bz crash risk](https://skyblock.bz/crash) before treating any early dip or spike as confirmed rather than speculative.
+Classes change with the new model. Berserk gains multiplicative melee damage per level and faster Lust for Blood scaling, but Bloodlust healing moves from per hit to per kill. Mage gains Ability Damage, Healer gains Vitality and flat Mending with self-healing now affected by Mending, and Tank gains Vitality. Healer's Healing Circle falls from 2% to 1% max HP per second, and Archer's ghost Healing Bow falls from 20% to 10% max HP.
+
+## Crimson Isle, Kuudra and other damage changes
+
+Crimson Isle miniboss loot now requires 250,000 contribution damage instead of 500,000. Ashfang's Gravity Orb deals 5,000 damage per second instead of instantly killing the player, its blaze healing falls to 250,000 and its blazes have 2 million HP. Bladesoul, Mage Outlaw, Barbarian Duke and Magma Boss all receive survivability-oriented changes.
+
+Kuudra's general mob damage is halved. Dropships and Chaosmites get tier-based flat values, while Omegagma, Wandering Blaze and Blazing Golem lose max-HP or percentage-HP scaling on major attacks. This is intended to keep endgame Kuudra sustainable despite the reduced availability of healing.
+
+The same design reaches other areas:
+
+- Sea creatures including Nessie, Blue Ring Octopus, Thunder, Lord Jawbus and Ragnarok deal less or flatter damage.
+- Mythological Ritual enemies replace several max-HP true-damage attacks with flat regular damage.
+- Dragon Rush, Fireball and Lightning true-damage portions become 550, 200 and 200 respectively.
+- Glacite mob base damage is reduced.
+- Campfire challenges become 20% true and 80% regular damage and no longer require damage-negation items.
+- Mithril Grubbers can drop Plasma, providing a fishing-based alternative to Ghosts.
+- Explosive Arrows no longer hurt their user.
+
+## What to do first
+
+1. **Rebuild one combat loadout around a deliberate healing loop.** Choose where the Vitality goes: a 50-cost Orb or Wither Shield, a 25-cost Wand or Zombie Sword, or another active source. Do not count Drain as healing by itself.
+2. **Retest content instead of trusting old thresholds.** Catacombs stats, enemy damage and healing all changed simultaneously, so an old effective-health or boss-time benchmark is no longer comparable.
+3. **Claim the cheap early conveniences on new profiles.** Beginner Sacks, default Accessory Bag space, the Chicken Pet and streamlined farming gear remove enough friction to change an efficient early route.
+4. **Avoid buying Harvest Feast materials into launch hype without checking volume.** Permanent Overbloom creates real demand, but the first-day price can still overshoot the eventual crafting demand.
+5. **Exit obsolete assumptions.** Enchanted Bookshelves lost their use, the active Disco Destination loop is gone, and the Salty—not Groovy—Sprayonator is the final live nozzle tier.
+
+Hypixel explicitly invited post-release feedback on content that became harder despite the damage reductions. If a fight feels worse, record the activity, tier, health, defense, Vitality and healing setup; that is much more actionable than reporting that healing "feels bad" without a reproducible loadout.

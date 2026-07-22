@@ -77,7 +77,7 @@ The pack's bundled `LICENSE` allows Hypixel-related websites, guides, screenshot
 
 - `/static/guides/hypixel-skyblock-0-26-0-update.webp`: Loadouts; a UI-free green-to-cyan armor transformation in the 2026 Hub.
 - `/static/guides/hypixel-skyblock-combat-trends-july-2026.webp`: Combat Trends; coordinated Hyperion/Terminator combat in Kuudra's Hollow.
-- `/static/guides/hypixel-skyblock-0-26-1-alpha.webp`: 0.26.1 Alpha; the four-set Farmhand, Haymaker, Sprout, and Tater progression on armor stands in the Garden.
+- `/static/guides/hypixel-skyblock-0-26-1-alpha.webp`: 0.26.1 update; the four-set Farmhand, Haymaker, Sprout, and Tater progression on armor stands in the Garden.
 - `/static/guides/hypixel-skyblock-farming-trends-july-2026.webp`: Farming Trends; the selected pest-plus-Feast farming loop in the Garden.
 - `/static/guides/post-lotus-atoll-economy-recap.webp`: Post-Lotus economy; four Trophy Frog rarity medallions beside the Lotus pond.
 - `/static/guides/new-fishing-island-guide-2026.webp`: New Fishing Island; a fishing ship moored at the vine-covered Backwater Bayou below its red chimney towers.
@@ -238,13 +238,13 @@ Lighting/mood: cyan-violet cool light from the dungeon side, orange-gold light f
 Constraints addition: the Golden Dragon remains a small cube-headed companion pet about one third player height; no giant dragon.
 ~~~
 
-## Selected 0.26.1 Alpha prompt
+## Selected 0.26.1 farming-progression prompt
 
-The second regenerated farming candidate was selected. It represents the Release Candidate's renamed farming-armor progression and deliberately isolates each set into one coherent palette.
+The second regenerated farming candidate was selected. It represents the live update's renamed farming-armor progression and deliberately isolates each set into one coherent palette.
 
 ~~~text
 Use case: stylized-concept
-Asset type: 16:9 editorial blog feature image for the Hypixel SkyBlock 0.26.1 Release Candidate article.
+Asset type: 16:9 editorial blog feature image for the Hypixel SkyBlock 0.26.1 update article.
 Input images: Image 1 is a rendering-quality anchor only; Image 2 is the official Garden location reference; Image 3 is the official resource-pack Rookie Hoe sprite and exact compact tool-silhouette reference.
 Primary request: Create a premium Minecraft animation frame showing the exact Farming Armor progression rebuild.
 Scene/backdrop: a recognizable SkyBlock Garden path beside the central barn and four crop beds, rebuilt entirely from crisp Minecraft blocks under warm morning light.
