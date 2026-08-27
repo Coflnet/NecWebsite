@@ -3,13 +3,18 @@
   "type": "module",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=26 <27"
+  },
+  "packageManager": "npm@11.5.2",
   "scripts": {
     "predev": "node scripts/generate-responsive-images.mjs",
     "dev": "astro dev",
     "prebuild": "node scripts/generate-responsive-images.mjs && node scripts/verify-feature-images.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "image:feature": "node scripts/optimize-feature-image.mjs"
+    "image:feature": "node scripts/optimize-feature-image.mjs",
+    "test": "node --test"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.14",
