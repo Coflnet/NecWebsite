@@ -15,6 +15,7 @@ const MONTH_ARCHIVES = new Set([
   'june-2026',
   'july-2026',
   'august-2026',
+  'september-2026',
 ]);
 
 // Individual guides are MDX in src/content/guides; a handful of listing/legacy
