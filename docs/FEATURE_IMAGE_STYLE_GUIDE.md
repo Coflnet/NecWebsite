@@ -97,6 +97,12 @@ All sample directories were removed from the project after selection. Historical
 8. After approval, run `npm run image:feature -- /absolute/path/to/generated-image.png article-slug`. Add `--force` only when intentionally replacing an existing approved image.
 9. Verify the generated master, update the article frontmatter, then run `npm run build`; the build creates and verifies all responsive derivatives.
 
+### The feature image is mandatory
+
+Every new guide in `src/content/guides` must ship with a feature image, and the build enforces it. The `prebuild` step runs `scripts/verify-guide-featured-images.mjs`, which fails `npm run build` unless the guide declares `featuredImage` with `src`, `alt`, `width`, and `height`, the referenced master exists under `public/static/guides`, and the declared `width` and `height` equal the file's real pixel dimensions. A failure names the guide's slug and what is missing; fix it by running `generate-post-images`, `ask-images`, and `npm run image:feature`.
+
+Guides published before this check are exempt through `scripts/legacy-guides-without-featured-image.mjs`. That list may only shrink: never add a slug to get a new guide past the build, and remove a slug when its guide gains artwork or is deleted.
+
 ### Compression and responsive-output contract
 
 The `image:feature` command is the only supported promotion path from generated artwork to a live feature image. It performs the following steps consistently:
