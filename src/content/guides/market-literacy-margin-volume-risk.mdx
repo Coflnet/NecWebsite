@@ -1,10 +1,10 @@
 ---
 title: How to Read Margin, Volume and Risk Before You Flip
-description: An expert based market-literacy guide for Hypixel SkyBlock flips explaining why headline margin is not enough and how volume, exit speed and risk decide whether a flip is real.
+description: "Check margin, volume and risk before you flip. Compare actual craft and Bazaar receipts with a ledger that separates fees, sold costs and unsold inventory."
 kicker: Tools
-lede: "Most flipping mistakes happen before the flip is even bought. Players see a large margin, imagine the resale and stop thinking. But a real market decision has at least three parts: how large the spread is, how fast the item actually moves and what kind of risk sits between entry and exit. This market-literacy page exists because the guide series would be incomplete without it. Every flipping, crafting and bazaar page in the series quietly depends on the same underlying skill: reading whether a theoretical profit can survive contact with the live market."
+lede: "Read margin, volume and risk before you flip by separating a quoted spread from coins actually received. You need a record of your purchases, sales and fees; open listings cannot establish realized profit."
 datePublished: 2026-05-18
-dateModified: 2026-04-19
+dateModified: 2026-10-29
 ogDescription: Evaluate flips through the full market picture instead of getting baited by screenshot-sized spreads.
 tools:
   - { label: SkyCofl flips, href: 'https://sky.coflnet.com/flips' }
@@ -15,11 +15,11 @@ tools:
   - { label: BazaarTracker margin, href: 'https://bazaartracker.com/margin' }
   - { label: BazaarTracker demand, href: 'https://bazaartracker.com/demand' }
 bestFor: Players who want to stop chasing screenshot bait and start evaluating flips with repeatable market logic.
-sourceNote: This page distills the shared market-reading principles underneath the more specific flipping guides in the guide series.
+sourceNote: This page distills the shared market-reading principles underneath the more specific flipping guides in the guide series. Editorial additions dated 29 October 2026 cover planning and accounting; price examples are timestamped quotes, not completed sales or a fresh verification of game mechanics.
 related:
   - { label: 'Bazaar Flipping Guide for Hypixel SkyBlock in 2026', href: '/guides/bazaar-flipping-guide-2026' }
   - { label: 'Craft Flipping Guide for Hypixel SkyBlock in 2026', href: '/guides/craft-flipping-guide-2026' }
-  - { label: 'Best Hypixel SkyBlock Flipping Tools Compared in 2026', href: '/guides/flipping-tools-comparison-2026' }
+  - { label: 'Hypixel SkyBlock Flipping Tools Workflow Checklist', href: '/guides/flipping-tools-comparison-2026' }
 ---
 
 import Callout from '../../components/Callout.astro';
@@ -27,6 +27,30 @@ import Callout from '../../components/Callout.astro';
 <Callout title="Research basis:">
 Recurring creator advice across AH, bazaar and craft flipping plus the live-tool behavior observed on SkyCofl, Skyblock.bz and BazaarTracker.
 </Callout>
+
+## How do I tell if a Hypixel SkyBlock flip has a real profit after fees and enough trading volume to sell?
+
+Use **net profit = gross completed-sale receipts − acquisition cost of sold units − charges not already deducted**. If your recorded receipt is already net of a fee, do not subtract that fee twice. Check the charges shown for your transaction rather than assuming a universal tax rate.
+
+The [dated Bazaar example](/guides/bazaar-flipping-guide-2026) quotes a 49,900-coin immediate purchase and a 46,140-coin immediate exit for 100 Enchanted Carrots on 29 October 2026 at 14:36 UTC: **−3,760 coins before separate charges**. Adding fees cannot turn that loss into profit. This is quote arithmetic, not a completed trade.
+
+Check how much of your own trial order actually fills and sells during your observation window. Market-wide volume and available supply are context, not a guarantee that your quantity will clear. Stop scaling when your own exit stalls or the current net exit no longer covers cost.
+
+## How can I track my actual Hypixel SkyBlock flipping profits and decide whether crafting or Bazaar flipping is working better?
+
+Keep a ledger outside NEC; NEC teaches the accounting and does not provide a profit tracker. Use one row per batch and compare equal observation periods. Here is a worksheet for two sessions; the blanks require your actual transaction records, not a price quote.
+
+| Field | Bazaar | Craft |
+| --- | --- | --- |
+| Date and active minutes | Record start/end | Record start/end |
+| Cost of units sold | Actual filled purchase costs | All inputs used for sold output |
+| Gross completed-sale receipts | Actual sales only | Actual output sales only |
+| Separate fees and charges | Record once | Record once |
+| Realized profit | Receipts minus sold cost minus charges | Receipts minus sold cost minus charges |
+| Unsold inventory at cost | Keep outside realized profit | Include unused inputs and unsold crafts |
+| Open commitments | Unfilled buy orders | Unfilled input orders |
+
+Only compare profit per active minute once you also record elapsed time, capital tied up and unsold inventory. A profitable sold batch can coexist with losing inventory. The [craft quote example](/guides/craft-flipping-guide-2026) is a pre-purchase check; it cannot fill the completed-sales column.
 
 ## Margin is the beginning, not the answer
 
